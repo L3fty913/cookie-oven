@@ -1,0 +1,23 @@
+.well {
+  background: var(--color-well-deep);
+  color: var(--ink-on-well);
+  padding: 1.1rem 1.2rem 1.2rem;
+  box-shadow: var(--shadow-sheet);
+  clip-path: polygon(4px 0, 100% 8px, calc(100% - 6px) 100%, 0 calc(100% - 5px));
+}
+
+.kicker {
+  margin: 0;
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  color: var(--ink-fail);
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-display);
+  margin: 0.35rem 0 0.45rem;
+  font-size: 1.4rem;
+}
+
+.body { margin: 0; color: var(--ink-dim); }

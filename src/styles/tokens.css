@@ -1,0 +1,41 @@
+:root {
+  --color-environment-green: #ccff00;
+  --color-action-confirm: #ccff00;
+  --color-action-money: #f0d24a;
+  --color-paper-cream: #efe3c4;
+  --color-paper-white: #f6f1e4;
+  --color-paper-manila: #e2c072;
+  --color-paper-tan: #c9a070;
+  --color-paper-ledger: #f3ead2;
+  --color-well: #14110e;
+  --color-well-mid: #1c1814;
+  --color-well-deep: #221c16;
+
+  --ink-primary: #12100c;
+  --ink-muted: #3c342c;
+  --ink-on-well: #f3ead2;
+  --ink-dim: #b7aa92;
+  --ink-fail: #9a2b2b;
+
+  --shadow-sheet: 6px 7px 0 rgba(0, 0, 0, 0.28);
+  --shadow-sheet-hover: 10px 13px 0 rgba(0, 0, 0, 0.32);
+  --shadow-pressed: 2px 3px 0 rgba(0, 0, 0, 0.28);
+  --shadow-layer: 3px 4px 0 rgba(0, 0, 0, 0.22);
+
+  --texture-paper: 0.055;
+  --texture-well: 0.14;
+  --texture-size: 180px;
+
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", menlo, monaco,
+    consolas, monospace;
+  --font-display: "Archivo Black", "Arial Black", impact, sans-serif;
+
+  --duration-fast: 90ms;
+  --duration-standard: 180ms;
+  --ease-paper: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-press: cubic-bezier(0.4, 0, 1, 1);
+  --scale-press: 0.985;
+  --control-standard: 44px;
+  --stage-max: 72rem;
+  --gutter: 1.15rem;
+}

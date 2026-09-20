@@ -1,19 +1,31 @@
 {
   "name": "cookie-oven",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
+  "description": "Cookie Chain workbench: paper sheets on a well, Nightly-signed memo receipts, fail-closed RPC.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
     "@solana/web3.js": "^1.98.4",
-    "buffer": "^6.0.3"
+    "buffer": "^6.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^25.0.1",
     "typescript": "^5.9.2",
-    "vite": "^7.1.5"
+    "vite": "^7.1.5",
+    "vitest": "^2.1.4"
   }
 }

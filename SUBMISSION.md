@@ -1,5 +1,7 @@
 # Superteam submission pack
 
+Rebuild 1.1: paper workbench, fail-closed RPC, Vitest, Nightly sign-then-broadcast.
+
 Bounty: [Create an App on Cookie Chain](https://superteam.fun/earn/listing/create-an-app-on-cookie-chain-app/)
 Deadline: 2026-09-22 21:59 UTC
 Prize: $500 / $500 (two winners), $1,000 USDC total

@@ -22,12 +22,11 @@ export async function connectNightly(): Promise<PublicKey> {
   const nightly = getNightly();
   if (!nightly) {
     throw new Error(
-      "Nightly wallet not found. Install it from nightly.app, then reload.",
+      "Nightly wallet not found. Install nightly.app, add Cookie RPC, reload.",
     );
   }
   const result = await nightly.connect();
-  const key = nightly.publicKey ?? asPublicKey(result);
-  return key;
+  return nightly.publicKey ?? asPublicKey(result);
 }
 
 export async function disconnectNightly() {
@@ -38,7 +37,7 @@ export async function disconnectNightly() {
 export async function signWithNightly(tx: Transaction): Promise<Transaction> {
   const nightly = getNightly();
   if (!nightly?.signTransaction) {
-    throw new Error("Nightly cannot sign transactions in this browser");
+    throw new Error("Nightly cannot sign in this browser");
   }
   return nightly.signTransaction(tx);
 }

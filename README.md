@@ -1,42 +1,29 @@
 # Cookie Oven
 
-Live ops cApp on **Cookie Chain** (SVM). Built for the Superteam Earn bounty [Create an App on Cookie Chain](https://superteam.fun/earn/listing/create-an-app-on-cookie-chain-app/).
+Cookie Chain workbench. Paper sheets on a well. Nightly signs. This desk broadcasts.
 
-## What it does
+Built against the Cash Apes frontend canon (paper cutout, offset shadows, fail-closed reads) and The Tape kill list (no generic crypto HUD, no fake activity).
 
-- Connects **Nightly** (required by the bounty)
-- Reads live Cookie Chain health, slot, epoch, genesis, and non-vote TPS from `https://rpc.cookiescan.io`
-- Shows COOK balance plus **Cookie DAS** assets from `https://api.cookiescan.io`
-- Bakes an on-chain **memo receipt**: Nightly signs, the app broadcasts on Cookie RPC (it does not ask the wallet to send as `solana:mainnet`)
-- Links out to Cookiescan, docs, and the Hyperlane COOK bridge
+Live: https://l3fty913.github.io/cookie-oven/
 
-## Why the send path is this way
+## Invariants
 
-Cookie Chain is Solana-compatible but is not in the Wallet Standard chain enum. If the app calls `signAndSendTransaction` with `solana:mainnet`, Nightly can broadcast to the wrong cluster. Ovenboard only asks Nightly to **sign**, then submits the signed bytes itself through the Cookie Connection (`rpc.cookiescan.io` + `wss://ws.cookiescan.io`).
+- Unverified RPC / DAS / balance reads print **CAN'T VERIFY**. Never a silent zero.
+- Empty wallet state prints **NONE ON RECORD**, distinct from unverified.
+- Bake phases: idle → ready → waiting on Nightly → pending → confirmed | failed.
+- Nightly **signs only**. Broadcast is `rpc.cookiescan.io` + `wss://ws.cookiescan.io`. Cookie Chain is not in Wallet Standard's chain enum; `signAndSendTransaction` as `solana:mainnet` is a cluster bug.
+- Genesis pin: `9wDaBRDgArEUpvhHxGguNkwozsZh4UpGZB9o2EoEcBB2`. Mismatch fails closed.
 
-## Run locally
+## Stack
+
+Vite, React, TypeScript, Vitest. Tokens and grain from the Cash Apes paper system. No ape traits.
 
 ```bash
 npm install
+npm test
 npm run dev
 ```
 
-Install [Nightly](https://nightly.app), add Cookie Chain RPC `https://rpc.cookiescan.io`, bridge a little COOK from Solana, then Connect Nightly → Bake on-chain.
+## Bounty
 
-## Network
-
-| | |
-| --- | --- |
-| RPC | https://rpc.cookiescan.io |
-| WebSocket | wss://ws.cookiescan.io |
-| DAS | https://api.cookiescan.io |
-| Explorer | https://cookiescan.io |
-| Bridge | https://hyperlane.cookiescan.io |
-| Genesis | `9wDaBRDgArEUpvhHxGguNkwozsZh4UpGZB9o2EoEcBB2` |
-| Memo program | `MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr` |
-
-## Submit
-
-1. Live app URL (GitHub Pages after deploy)
-2. This repository
-3. After the first bake: the memo transaction signature / wallet address
+[Create an App on Cookie Chain](https://superteam.fun/earn/listing/create-an-app-on-cookie-chain-app/) — $1,000 USDC, due 22 Sep 2026. Submission pack: `SUBMISSION.md`.

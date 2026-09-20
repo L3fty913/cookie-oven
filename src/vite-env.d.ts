@@ -10,13 +10,9 @@ interface NightlySolana {
   signTransaction<T extends Transaction | VersionedTransaction>(tx: T): Promise<T>;
 }
 
-interface NightlyProvider {
-  solana?: NightlySolana;
-}
-
 declare global {
   interface Window {
-    nightly?: NightlyProvider;
+    nightly?: { solana?: NightlySolana };
   }
 }
 
